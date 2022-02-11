@@ -17,6 +17,9 @@ public interface NotesDao {
     @Query("SELECT * FROM notes WHERE person_id=:id")
     Note get(int id);
 
+    @Query("SELECT MAX(note_id) from NOTES")
+    int maxId();
+
     @Insert
     void insert(Note note);
 
